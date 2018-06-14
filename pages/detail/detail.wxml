@@ -4,3 +4,10 @@
  <view class="p-time">{{info.time}}</view>
  <view class="p-desc">{{info.desc}}</view>
 </view>
+
+<view class="container">
+ 比赛信息A1VSA2
+</view>
+<view class="container">
+ 比赛信息A1VSA2
+</view>

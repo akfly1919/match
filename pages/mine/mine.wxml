@@ -11,10 +11,14 @@
     <view class="person-depict" wx:if="{{nickName}}">{{nickName}}</view>
   </view>
   <view class="mine-items">
-
-
     <view class="mine-item" bindtap="jumpCollect">
       <text>我的比赛</text>
+    </view>
+    <view class="mine-item" bindtap="jumpCollect">
+      <text>球队管理</text>
+    </view>
+    <view class="mine-item" bindtap="jumpCollect">
+      <text>赛事管理</text>
     </view>
     <view class="mine-item" bindtap="jumpProblem">
       <text>问题反馈</text>

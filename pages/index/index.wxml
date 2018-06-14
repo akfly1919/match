@@ -14,9 +14,9 @@
     <text>banner图</text>
   </view>
   <view class='tab-list'>
-    <view class='tab {{tab==1?"active":""}}' bindtap="editEvt" data-id="1">最新赛事</view>
-    <view class='tab {{tab==2?"active":""}}' bindtap="editEvt" data-id="2">进行中</view>
-    <view class='tab {{tab==3?"active":""}}' bindtap="editEvt" data-id="3">已结束</view>
+    <view class='tab {{tab==1?"active":""}}' bindtap="editEvt" data-id="1">赛事列表</view>
+    <view class='tab {{tab==2?"active":""}}' bindtap="editEvt" data-id="2">自由约球</view>
+    <view class='tab {{tab==3?"active":""}}' bindtap="editEvt" data-id="3">篮球战术</view>
   </view>
   <view class='section-list' wx:if='{{tab==1}}'>
     <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
