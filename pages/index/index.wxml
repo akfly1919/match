@@ -31,28 +31,10 @@
     </view>
   </view>
   <view class='section-list' wx:if='{{tab==2}}'>
-    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" >
-      <image src='/imgs/basket.png'></image>
-      <view class='match-info'>
-        <view class='match-tl'>{{item.title}}</view>
-        <view class='match-time'>比赛时间：{{item.time}}</view>
-      </view>
-    </view>
-    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
-      <view class="empty-hint">暂无数据</view>
-    </view>
+      <view class="empty-hint">正在开发，敬请期待</view>
   </view>
   <view class='section-list' wx:if='{{tab==3}}'>
-    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}">
-      <image src='/imgs/basket.png'></image>
-      <view class='match-info'>
-        <view class='match-tl'>{{item.title}}</view>
-        <view class='match-time'>比赛时间：{{item.time}}</view>
-      </view>
-    </view>
-    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
-      <view class="empty-hint">暂无数据</view>
-    </view>
+      <view class="empty-hint">正在开发，敬请期待</view>
   </view>
   <view class='jump' bindtap="bindViewTap">
     <image src='/imgs/create.png'></image>

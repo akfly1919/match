@@ -3,6 +3,9 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/create/create",
+    "pages/add/add",
+    "pages/add/match/match",
+    "pages/add/team/team",
     "pages/detail/detail",
     "pages/logs/logs"
   ],

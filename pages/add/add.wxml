@@ -1,0 +1,3 @@
+<!--pages/add/add.wxml-->
+<view bindtap='bindItemTap1'>赛事</view>
+<view bindtap='bindItemTap2'>球队</view>

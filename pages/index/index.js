@@ -28,7 +28,7 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../create/create'
+      url: '../add/add'
     })
   },
   bindItemTap(){
