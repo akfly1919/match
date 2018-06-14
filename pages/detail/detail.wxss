@@ -1,0 +1,23 @@
+.container {
+  text-align: left;
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.p-title {
+  font-size: 30rpx;
+  width: 100%;
+}
+
+.p-time {
+  font-size: 22rpx;
+  width: 100%;
+  padding-top: 15rpx;
+}
+
+.p-desc {
+  font-size: 26rpx;
+  width: 100%;
+  padding-top: 30rpx;
+}

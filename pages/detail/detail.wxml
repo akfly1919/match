@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container">
+ <view class="p-title">{{info.title}}</view>
+ <view class="p-time">{{info.time}}</view>
+ <view class="p-desc">{{info.desc}}</view>
+</view>

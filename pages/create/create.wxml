@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="dis-wrapper">
+    <view class="dis-box">
+      <input value="{{title}}" bindinput="titleInput" placeholder="赛事名称："></input>
+    </view>
+    <view class="dis-box">
+      <input value="{{time}}" bindinput="timeInput" placeholder="开始时间："></input>
+    </view>
+    <view class="dis-box">
+      <input value="{{contact}}" bindinput="contactInput" placeholder="联系方式："></input>
+    </view>
+     <view class="dis-box">
+      <input value="{{num}}" bindinput="numInput" placeholder="球队数量："></input>
+    </view>
+       <view class="dis-box">
+      <input value="{{icon}}" bindinput="iconInput" placeholder="赛事图标："></input>
+    </view>
+    <view class="dis-area">
+      <textarea value="{{desc}}" bindinput="descInput" placeholder="赛事描述："/>
+    </view>
+
+    <view class="push-btn" bindtap="submitEvt">发布评论</view>
+  </view>
+</view>

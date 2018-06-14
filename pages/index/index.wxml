@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <view class='banner'>
+    <text>banner图</text>
+  </view>
+  <view class='tab-list'>
+    <view class='tab {{tab==1?"active":""}}' bindtap="editEvt" data-id="1">最新赛事</view>
+    <view class='tab {{tab==2?"active":""}}' bindtap="editEvt" data-id="2">进行中</view>
+    <view class='tab {{tab==3?"active":""}}' bindtap="editEvt" data-id="3">已结束</view>
+  </view>
+  <view class='section-list' wx:if='{{tab==1}}'>
+    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+      <image src='/imgs/basket.png'></image>
+      <view class='match-info'>
+        <view class='match-tl'>{{item.title}}</view>
+        <view class='match-time'>比赛时间：{{item.time}}</view>
+      </view>
+    </view>
+    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
+      <view class="empty-hint">暂无数据</view>
+    </view>
+  </view>
+  <view class='section-list' wx:if='{{tab==2}}'>
+    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" >
+      <image src='/imgs/basket.png'></image>
+      <view class='match-info'>
+        <view class='match-tl'>{{item.title}}</view>
+        <view class='match-time'>比赛时间：{{item.time}}</view>
+      </view>
+    </view>
+    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
+      <view class="empty-hint">暂无数据</view>
+    </view>
+  </view>
+  <view class='section-list' wx:if='{{tab==3}}'>
+    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}">
+      <image src='/imgs/basket.png'></image>
+      <view class='match-info'>
+        <view class='match-tl'>{{item.title}}</view>
+        <view class='match-time'>比赛时间：{{item.time}}</view>
+      </view>
+    </view>
+    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
+      <view class="empty-hint">暂无数据</view>
+    </view>
+  </view>
+  <view class='jump' bindtap="bindViewTap">
+    <image src='/imgs/create.png'></image>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/create/create",
+    "pages/detail/detail",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "篮球轰趴馆",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#c1c1c1",
+    "selectedColor": "#ff954c",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/home_d.jpg",
+        "selectedIconPath": "imgs/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "imgs/person_d.jpg",
+        "selectedIconPath": "imgs/person.png",
+        "text": "个人"
+      }
+    ]
+  }
+}

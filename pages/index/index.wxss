@@ -1,0 +1,76 @@
+.banner{
+  width: 100%;
+  height: 350rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  background-color: #efefef;
+}
+.tab-list{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  border-bottom:1px solid #e5e5e5; 
+}
+.tab{
+  width: 33.333%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  cursor: pointer;
+}
+.tab.active{
+  color: #007fff;
+}
+.section-list{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.section{
+  padding: 30rpx 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.section image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 6rpx;
+}
+.match-info{
+  margin-left: 20px;
+  flex: 1;
+}
+.match-tl{
+  font-size: 30rpx;
+}
+.match-time{
+   font-size: 22rpx;
+   padding-top: 15rpx;
+}
+.jump{
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  background-color: #ecdabf;
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jump image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.no-data{
+  padding-top: 100rpx;
+}
+.empty-hint{
+  font-size: 28rpx;
+  text-align: center;
+}
