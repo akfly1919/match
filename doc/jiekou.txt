@@ -1,0 +1,61 @@
+1.用户接口
+https: //fei.coucang.com/xcx/user/login.do
+入参：jscode  返回session_key openid
+
+https: //fei.coucang.com/xcx/user/getUserInfo.do
+
+入参 String encryptedData,String iv
+返回{
+  "openId": "OPENID",
+  "nickName": "NICKNAME",
+  "gender": GENDER,
+  "city": "CITY",
+  "province": "PROVINCE",
+  "country": "COUNTRY",
+  "avatarUrl": "AVATARURL",
+  "unionId": "UNIONID",
+  "watermark": {
+    "appid": "APPID",
+    "timestamp":TIMESTAMP
+  }
+}
+
+
+
+
+
+
+
+2.业务接口
+
+https: //fei.coucang.com/xcx/yewu/addMatch.do
+https: //fei.coucang.com/xcx/yewu/updMatch.do
+https: //fei.coucang.com/xcx/yewu/selMatch.do
+
+上面三个为赛事增删改查接口，删除就是改状态为1 正常状态为0
+
+入参为：
+name = #{name,jdbcType=VARCHAR
+},  名称
+lq_desc = #{desc,jdbcType=VARCHAR
+}, 简介
+openid = #{openid,jdbcType=VARCHAR
+},微信id
+unionid = #{unionid,jdbcType=VARCHAR
+},唯一id
+token = #{token,jdbcType=VARCHAR
+},邀请码(后台生成)
+status = #{status,jdbcType=VARCHAR
+},
+0为正常，1为删除
+begTime = #{begtime,jdbcType=TIMESTAMP
+}, 开始时间
+endTime = #{endtime,jdbcType=TIMESTAMP
+}, 结束时间
+create_time = #{createTime,jdbcType=TIMESTAMP
+} 创建时间 系统生成
+
+返回：json串 code200为正常，msg提示信息 data为需要返回的数据{
+  "code": "301",
+  "msg": "id or openid is null"
+}
