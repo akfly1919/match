@@ -33,8 +33,15 @@
   <view class='section-list' wx:if='{{tab==2}}'>
       <view class="empty-hint">正在开发，敬请期待</view>
   </view>
-  <view class='section-list' wx:if='{{tab==3}}'>
-      <view class="empty-hint">正在开发，敬请期待</view>
+  <view class='section-list tactics-section' wx:if='{{tab==3}}'>
+      <!-- <view class="empty-hint">正在开发，敬请期待</view> -->
+       <view class="tactics-item" wx:for-index="idx" wx:for="{{tacticsList}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+      <image src='/imgs/basket.png'></image>
+      <view class='tactics-info'>
+        <view class='tactics-tl'>{{item.title}}</view>
+        <view class='tactics-desc'>{{item.desc}}</view>
+      </view>
+    </view>
   </view>
   <view class='jump' bindtap="bindViewTap">
     <image src='/imgs/create.png'></image>

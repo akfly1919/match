@@ -1,0 +1,22 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="dis-wrapper">
+    <view class="dis-box">
+      <input value="{{title}}" bindinput="titleInput" placeholder="队友名称："></input>
+    </view>
+    <view class="dis-box">
+      <input value="{{contact}}" bindinput="contactInput" placeholder="擅长位置："></input>
+    </view>
+     <view class="dis-box">
+      <input value="{{num}}" bindinput="numInput" placeholder="球服号码："></input>
+    </view>
+       <view class="dis-box">
+      <input value="{{icon}}" bindinput="iconInput" placeholder="球员头像："></input>
+    </view>
+    <view class="dis-area">
+      <textarea value="{{desc}}" bindinput="descInput" placeholder="球员简介："/>
+    </view>
+
+    <view class="push-btn" bindtap="submitEvt">添加队员</view>
+  </view>
+</view>

@@ -1,0 +1,87 @@
+.person-banner {
+  width: 100%;
+  height: 300rpx;
+  /* background-color: #ec9796; */
+
+   background: #e5e5e5;
+}
+
+.person-avatar {
+  width: 120rpx;
+  margin: 0 auto;
+  padding-top: 60rpx;
+}
+
+.person-avatar image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+
+.person-depict {
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  padding-top: 20rpx;
+  white-space: nowrap;
+}
+
+.mine-items {
+  text-align: center;
+  background-color: #f3f3f4;
+  width: 100%;
+}
+
+.mine-item {
+  font-size: 26rpx;
+  color: #fe6637;
+  line-height: 98rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 6rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 45rpx;
+}
+
+.mine-item image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10px;
+}
+
+.mine-item.phone image {
+  margin-right: 18rpx;
+}
+
+.mine-item:last-child {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}
+
+button {
+  font-size: 26rpx;
+  color: #fe6637;
+  background-color: #fff;
+  margin-left: 0;
+  border: 1px solid transparent;
+  width: 600rpx;
+  text-align: left;
+  padding: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  outline: none;
+}
+
+button::after {
+  border: none;
+}
+
+/* button{ outline:none; border:none; list-style: none; } */
+
+.button-hover {
+  background-color: #fff;
+  color: #ec9796;
+}

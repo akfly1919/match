@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<view class="container">
+    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+      <image src='/imgs/basket.png'></image>
+      <view class='match-info'>
+        <view class='match-tl'>{{item.title}}</view>
+        <view class='match-time'>比赛时间：{{item.time}}  共{{item.count}}只球队</view>
+      </view>
+    </view>
+
+     <view class="push-btn" bindtap="submitEvt">添加赛事</view>
+</view>

@@ -6,6 +6,24 @@ Page({
   data: {
     infos:[],
     tab:1,
+    tacticsList:[
+      {
+        title:'美国国家队教学-投篮',
+        desc:'标准的投篮训练方法'
+      },
+      {
+        title: '三威胁——姿势',
+        desc: '标准的投篮训练方法'
+      },
+      {
+        title: '11种转身过人的方法',
+        desc: '转身大全'
+      },
+      {
+        title: '哈登教你进攻三威胁',
+        desc: '绝对实用'
+      }
+    ]
   },
   editEvt(event){
     // console.log(evt)
