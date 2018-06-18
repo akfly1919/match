@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/team/list/list",
     "pages/index/index",
     "pages/mine/mine",
     "pages/create/create",
@@ -9,7 +10,6 @@
     "pages/detail/detail",
     "pages/match/list/list",
     "pages/match/add/add",
-    "pages/team/list/list",
     "pages/team/add/add",
     "pages/tactics/tactics"
   ],

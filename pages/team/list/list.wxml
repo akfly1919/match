@@ -1,22 +1,105 @@
 <!--logs.wxml-->
 <view class="container">
-  <view class="dis-wrapper">
-    <view class="dis-box">
-      <input value="{{title}}" bindinput="titleInput" placeholder="队友名称："></input>
-    </view>
-    <view class="dis-box">
-      <input value="{{contact}}" bindinput="contactInput" placeholder="擅长位置："></input>
-    </view>
-     <view class="dis-box">
-      <input value="{{num}}" bindinput="numInput" placeholder="球服号码："></input>
-    </view>
-       <view class="dis-box">
-      <input value="{{icon}}" bindinput="iconInput" placeholder="球员头像："></input>
-    </view>
-    <view class="dis-area">
-      <textarea value="{{desc}}" bindinput="descInput" placeholder="球员简介："/>
-    </view>
+  <view class='realTime-top'>
+    <view class="team-info">
+      <view class='team-half'>
+        <view class='team-name'>小米互娱</view>
+        <view class='team-score'>64</view>
+        <view class='team-data'>
+          <view class='team-td'>
+            <view class="data-tl">犯规</view>
+            <view class="data-pmt">3</view>
+          </view>
+          <view class='team-td'>
+            <view class="data-tl">暂停</view>
+            <view class="data-pmt">0</view>
+          </view>
+        </view>
+      </view>
+      <view class='team-half'>
+        <view class='team-name'>小米生态链</view>
+        <view class='team-score'>64</view>
+        <view class='team-data'>
+          <view class='team-td'>
+            <view class="data-tl">犯规</view>
+            <view class="data-pmt">3</view>
+          </view>
+          <view class='team-td'>
+            <view class="data-tl">暂停</view>
+            <view class="data-pmt">0</view>
+          </view>
+        </view>
+      </view>
 
-    <view class="push-btn" bindtap="submitEvt">添加队员</view>
+      <view class='current-info'>
+        <view class='current-tl'>第二节</view>
+        <view class='current-time'>09:52</view>
+        <view class='current-btn'>主菜单</view>
+      </view>
+    </view>
+  </view>
+  <view class='game-data-section'>
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>罚球</view>
+      <view class='data-tr'>
+        罚球
+        <text>+</text>
+      </view>
+    </view>
+    <view class='game-btn'>换人</view>
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>两分</view>
+      <view class='data-tr'>
+        两分
+        <text>+</text>
+      </view>
+    </view>
+    <view class='game-btn'>叫暂停</view>
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>三分</view>
+      <view class='data-tr'>
+        三分
+        <text>+</text>
+      </view>
+    </view>
+  </view>
+  <view class='game-data-section normal-section'>
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>篮板</view>
+      <view class='data-tr'>
+        篮板
+        <text>+</text>
+      </view>
+    </view>
+    <!-- <view class='game-btn'>换人</view> -->
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>助攻</view>
+      <view class='data-tr'>
+        助攻
+        <text>+</text>
+      </view>
+    </view>
+    <!-- <view class='game-btn'>叫暂停</view> -->
+    <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>抢断</view>
+      <view class='data-tr'>
+        抢断
+        <text>+</text>
+      </view>
+    </view>
+       <view class='data-item'>
+      <view class='data-tr'>
+        <text>+</text>盖帽</view>
+      <view class='data-tr'>
+        盖帽
+        <text>+</text>
+      </view>
+    </view>
   </view>
 </view>

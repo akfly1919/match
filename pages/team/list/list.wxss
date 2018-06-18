@@ -1,95 +1,98 @@
-.dis-wrapper{
+.realTime-top {
+  background: #3b48ee;
+  color: #fff;
   width: 100%;
-  padding: 0 30rpx;
+  padding: 30rpx;
   box-sizing: border-box;
+  text-align: center;
 }
 
-textarea{
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 10rpx;
-  box-sizing: border-box;
-  font-size: 26rpx;
-  border-radius: 6rpx;
+.team-info {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
-.dis-box{
+
+.team-half {
+}
+
+.team-name {
+  font-size: 28rpx;
+}
+
+.team-score {
+  font-size: 42rpx;
   margin-top: 30rpx;
 }
-input{
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-  font-size: 26rpx;
-  height: 60rpx;
-  padding: 0 10rpx;
-  border-radius: 6rpx;
-}
-.push-btn{
-  width: 90%;
-  background-color:#FFB6C1; 
-  color: #fff;
-  text-align: center;
-  line-height: 2.4;
-  font-size: 28rpx;
-  border-radius: 60rpx;
-  margin: 60rpx auto 100rpx auto;
-}
-.push-btn:active{
-  /* background-color:#cee1c1;  */
-  opacity: 0.9;
-}
-.dis-area{
-  margin-top: 100rpx;
+
+.team-data {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
 }
 
-.container {
-  overflow: hidden;
-}
-.about-title {
-  margin: 10rpx 0;
-  line-height: 100rpx;
-  font-size: 36rpx;
-  text-align: center;
-  color: #333;
-}
-.little-title{
-  margin: 10rpx 0;
-  line-height: 50rpx;
-  font-size: 28rpx;
-  text-align: center;
-  color: #333;
-}
-.about-inf {
-  padding: 30rpx;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 48rpx;
-  text-indent: 60rpx;
-  text-align: justify;
+.data-tl {
   font-size: 24rpx;
-  text-justify: inter-word;
-  letter-spacing: 2rpx;
 }
-.head-box {
-  margin-left: 15%;
-  width: 70%;
-  height: 150rpx;
+
+.data-pmt {
+  font-size: 22rpx;
 }
-.head-box image {
+
+.current-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.current-tl {
+  font-size: 30rpx;
+}
+
+.current-time {
+  font-size: 50rpx;
+  margin-top: 20rpx;
+}
+
+.current-btn {
+  width: 100rpx;
+  font-size: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.5);
+  border-radius: 50rpx;
+  padding: 10rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.game-data-section {
+  padding: 30rpx;
   width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #3b48ee;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.6);
 }
-.eye-box {
-  margin-top: -20rpx;
-  width: 100%;
-  height: 50rpx;
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
 }
-.eye-box image {
-  width: 100%;
-  height: 100%;
+
+.data-tr text {
+  color: #414141;
 }
-.inf-box {
-  margin-left: 4%;
-  margin-top: -16rpx;
-  width: 92%;
-  background-color: white;
-  box-shadow: 8rpx 8rpx 8rpx #cbcbcb;
+
+.game-btn {
+  line-height: 60rpx;
+  width: 500rpx;
+  margin: 10rpx auto;
+  border: 2rpx solid rgba(0, 0, 0, 0.6);
+  text-align: center;
+  border-radius: 50rpx;
+}
+
+.normal-section{
+  color: #414141;
+} 
+.normal-section .data-item{
+  margin-bottom: 50rpx;
 }
