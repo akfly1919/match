@@ -58,6 +58,18 @@ create_time = #{createTime,jdbcType=TIMESTAMP
   "msg": "id or openid is null"
 }
 
+https: //fei.coucang.com/xcx/yewu/addTeam.do
+https: //fei.coucang.com/xcx/yewu/updTeam.do
+https: //fei.coucang.com/xcx/yewu/selTeam.do
+
+  `name` varchar(255) DEFAULT NULL,//球队名称
+  `pic_url` varchar(255) DEFAULT NULL,//球队图标
+  `desc` varchar(255) DEFAULT NULL,//球队简介
+  `status` varchar(255) DEFAULT NULL// 0为正常，1为删除
+  `openId` varchar(100) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,//后台自动生成
+  `create_time` timestamp NULL DEFAULT NULL,
+
 3.篮球战术列表
 https: //fei.coucang.com/xcx/lqzs/list.do
 Json 串的数组，每个里面有如下数据
@@ -69,3 +81,17 @@ map.put("url", "http://mp.weixin.qq.com/s?__biz=MzA3NTkwMDAwMg==&mid=2649601472&
 		map.put("picUrl", "https://mmbiz.qlogo.cn/mmbiz/VPKUdic338ZHqkvUzVFyxjSYtqk0wzKfhOSw91zBYKtfyzwy7rLhejicVicicq6qs46QHoooSbpbuTCLVQnaEwuXyA/0?wx_fmt=jpeg");
 		map.put("title", "关于篮球，关于生活");
 		map.put("description", "假实现，未来提供");
+
+
+4.添加球员信息，由个人自己来修改，默认授权了，就会创建球员记录，具体数据由个人点击头像修改
+https: //fei.coucang.com/xcx/yewu/updPlayer.do
+
+这个接口的路径是 个人-编辑信息
+
+  `name` varchar(255) DEFAULT NULL, //昵称
+  `openid` varchar(100) DEFAULT NULL,//openid
+  `unionid` varchar(255) DEFAULT NULL,
+  `bri` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP, //生日
+  `height` int(11) DEFAULT NULL,//身高cm
+  `weight` int(11) DEFAULT NULL,//体重kg
+  `pos` varchar(255) DEFAULT NULL,//PF-SF-PG-SG-C  
