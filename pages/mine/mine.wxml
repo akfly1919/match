@@ -12,23 +12,34 @@
   </view>
   <view class="mine-items">
     <view class="mine-item" bindtap="jumpCollect" id="1">
+      <image src='/imgs/icon-my.png'></image>
       <text>我的比赛</text>
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
     <view class="mine-item" bindtap="jumpCollect" id="2">
+      <image src='/imgs/icon-gl.png'></image>
       <text>赛事管理</text>
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
     <view class="mine-item" bindtap="jumpCollect" id="3">
+      <image src='/imgs/icon-qd.png'></image>
       <text>球队管理</text>
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
     <view class="mine-item" bindtap="jumpProblem" id="4">
+      <image src='/imgs/icon-wt.png'></image>
       <text>问题反馈</text>
-
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
     <view class="mine-item" bindtap="jumpAbout">
+      <image src='/imgs/icon-about.png'></image>
       <text>关于我们</text>
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
     <view class="mine-item" bindtap="jumpCustomer">
+      <image src='/imgs/icon-kf.png'></image>
       <text>联系客服</text>
+      <image class="arrow" src='/imgs/icon-arrow.png'></image>
     </view>
   </view>
 </view>
