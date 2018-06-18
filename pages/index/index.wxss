@@ -1,33 +1,47 @@
-.banner{
+.banner {
   width: 100%;
-  height: 350rpx;
+  height: 388rpx;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40rpx;
   background-color: #efefef;
+  border-radius: 6rpx;
 }
-.tab-list{
+
+.banner image {
+  width: 750rpx;
+  height: 388rpx;
+}
+
+.tab-list {
   display: flex;
   text-align: center;
   width: 100%;
-  border-bottom:1px solid #e5e5e5; 
+  justify-content: space-between;
+  margin-top: 30rpx;
 }
-.tab{
-  width: 33.333%;
+
+.tab {
+  width: 210rpx;
   line-height: 80rpx;
-  font-size: 28rpx;
-  cursor: pointer;
+  font-size: 26rpx;
+  background: #fff;
+  border-radius: 6rpx;
 }
-.tab.active{
-  color: #007fff;
+
+.tab.active {
+  color: #fff;
+  background: rgb(59, 72, 238);
 }
-.section-list{
+
+.section-list {
   width: 100%;
-  padding: 0 30rpx;
   box-sizing: border-box;
+  margin-top: 30rpx;
 }
-.section{
+
+.section {
   padding: 30rpx 0;
   display: flex;
   width: 100%;
@@ -35,67 +49,141 @@
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
 }
-.section image{
+
+.section image {
   width: 130rpx;
   height: 130rpx;
   border-radius: 6rpx;
 }
-.match-info{
+
+.match-info {
   margin-left: 20px;
   flex: 1;
 }
-.match-tl{
+
+.match-tl {
   font-size: 30rpx;
 }
-.match-time{
-   font-size: 22rpx;
-   padding-top: 15rpx;
+
+.match-time {
+  font-size: 22rpx;
+  padding-top: 15rpx;
 }
-.jump{
+
+.jump {
   position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
+  left: 327rpx;
+  bottom: 0;
   background-color: #ecdabf;
   border-radius: 100%;
-  width: 100rpx;
-  height: 100rpx;
+  width: 96rpx;
+  height: 96rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.jump image{
+
+.jump image {
   width: 50rpx;
   height: 50rpx;
 }
-.no-data{
+
+.no-data {
   padding-top: 100rpx;
 }
-.empty-hint{
+
+.empty-hint {
   font-size: 28rpx;
   text-align: center;
 }
 
-/*战术列表*/
-.tactics-section{
+/*约球列表*/
+
+.about-item {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 6rpx;
+  margin-bottom: 30rpx;
+}
+
+.about-top {
   display: flex;
-  padding: 0 20rpx 20rpx 20rpx;
   justify-content: space-between;
-  flex-direction: row ;
+  align-items: center;
+}
+
+.about-top image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+}
+
+.about-info {
+  margin-left: 30rpx;
+  flex: 1;
+}
+
+.about-info .about-tl {
+  font-size: 26rpx;
+  color: #414145;
+}
+
+.about-time {
+  display: flex;
+  width: 100%;
+  font-size: 22rpx;
+  color: #414145;
+  margin-top: 5rpx;
+}
+
+.about-hour {
+  margin-left: 40rpx;
+}
+
+.about-desc {
+  font-size: 22rpx;
+  color: #414145;
+  margin-top: 5rpx;
+}
+
+.about-bottom{
+  margin-top: 30rpx;
+  display: flex;
+  font-size: 22rpx;
+  justify-content: space-between;
+}
+.about-distance{
+  background: #e5e5e5;
+  padding: 5rpx 10rpx;
+  border-radius: 6rpx;
+}
+/*战术列表*/
+
+.tactics-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   flex-wrap: wrap;
 }
-.tactics-item{
-  width: 345rpx;
-  margin-top: 20rpx;
+
+.tactics-item {
+  width: 330rpx;
+  color: #414145;
+  margin-bottom: 40rpx;
 }
-.tactics-item image{
+
+.tactics-item image {
   width: 100%;
-  height: 240rpx;
+  height: 246rpx;
+  border-radius: 6rpx;
 }
-.tactics-item .tactics-tl{
-  font-size: 28rpx;
+
+.tactics-item .tactics-tl {
+  font-size: 26rpx;
+  padding-top: 20rpx;
 }
-.tactics-item .tactics-desc{
-  font-size: 22rpx;
-  color: #333;
+
+.tactics-item .tactics-desc {
+  font-size: 20rpx;
   padding-top: 10rpx;
 }

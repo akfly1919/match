@@ -1,83 +1,144 @@
 // pages/add/team/team.js
+//获取应用实例
+const app = getApp()
+//index.js
+const network = require('../../../utils/network.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    name: '',
+    time: '',
+    contact: '',
+    num: '',
+    picUrl: '',
+    lq_desc: '',
+    imgList: [],
+    arrList: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  nameInput: function (event) {
+    this.setData({
+      name: event.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  timeInput: function (event) {
+    this.setData({
+      time: event.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  contactInput: function (event) {
+    this.setData({
+      contact: event.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  numInput: function (event) {
+    this.setData({
+      num: event.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  iconInput: function (event) {
+    this.setData({
+      icon: event.detail.value
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  descInput: function (event) {
+    this.setData({
+      lq_desc: event.detail.value
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  delImg(evt) {
+    var _index = evt.currentTarget.id, arr = [];
+    arr = this.data.imgList;
+    arr.splice(_index, 1);
+    this.setData({
+      imgList: arr,
+    })
   },
+  chooseImageTap: function () {
+    let self = this;
+    let info = app.globalData.serverUserInfo;
+    wx.showActionSheet({
+      itemList: ['从相册中选择', '拍照'],
+      itemColor: "#f7982a",
+      success: function (res) {
+        if (!res.cancel) {
+          if (res.tapIndex == 0) {
+            self.chooseWxImage('album')
+          } else if (res.tapIndex == 1) {
+            self.chooseWxImage('camera')
+          }
+        }
+      }
+    })
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  },
+  chooseWxImage(type) {
+    let self = this, arr = [];
+    arr = self.data.imgList;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: [type],
+      success: function (res) {
+        arr.push(res.tempFilePaths[0])
+        self.setData({
+          imgList: arr,
+        });
+        self.upLoadFile(res.tempFilePaths[0], 'res');
+      }
+    })
+  },
+  upLoadFile: function (filePath, name) {
+    let self = this, arr = [];
+    arr = self.data.arrList;
+    let info = app.globalData.serverUserInfo;
+    wx.uploadFile({
+      url: network.upLoadFile,
+      filePath: filePath,
+      name: name,
+      header: {
+        'content-type': 'multipart/form-data'
+      }, // 设置请求的 header
+      formData: {
+        // token: info ? info.token : '',
+        // user_id: info ? info.user_id : '',
+        openId: info ? info.openId : ''
+      }, // HTTP 请求中其他额外的 form data
+      success: function (res) {
+        arr.push(res[0]);
+        self.setData({
+          arrList: arr,
+        });
+      },
+      fail: function (res) {
+        console.log(res);
+        typeof fail == "function" && fail(res);
+      }
+    })
   },
   submitEvt() {
+    let info = app.globalData.serverUserInfo;
     var params = {
-      title: this.data.title,
-      time: this.data.time,
-      contact: this.data.contact,
+      name: this.data.name,
+      begTime: '2018-08-08',
+      endTime: '2018-08-09',
       num: this.data.num,
-      icon: this.data.icon,
-      desc: this.data.desc
+      openid: info ? info.openId : '',
+      picUrl: this.data.imgList[0]
     }
-    let infos = wx.getStorageSync('info') || [];
-    infos.splice(0, 0, params);
-    wx.setStorageSync('info', infos);
-    wx.showToast({ 'title': '回复成功', 'icon': 'success' });
-    setTimeout(function () {
-      wx.navigateBack();  //返回上一个页面
-    }, 1500);
+    //发起请求
+    network.GET(
+      {
+        url: network.addMatch,
+        params: params,
+        success: function (res) {
+          console.log(res)
+        },
+        fail: function () {
+          //失败后的逻辑
+
+        }
+      })
   }
 })

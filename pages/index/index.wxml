@@ -1,49 +1,57 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
-  <view class='banner'>
-    <text>banner图</text>
-  </view>
-  <view class='tab-list'>
-    <view class='tab {{tab==1?"active":""}}' bindtap="editEvt" data-id="1">赛事列表</view>
-    <view class='tab {{tab==2?"active":""}}' bindtap="editEvt" data-id="2">自由约球</view>
-    <view class='tab {{tab==3?"active":""}}' bindtap="editEvt" data-id="3">篮球战术</view>
-  </view>
-  <view class='section-list' wx:if='{{tab==1}}'>
-    <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
-      <image src='/imgs/basket.png'></image>
-      <view class='match-info'>
-        <view class='match-tl'>{{item.title}}</view>
-        <view class='match-time'>比赛时间：{{item.time}}</view>
+<view class='main-view'>
+  <view class='container'>
+    <view class='banner'>
+      <image src='/imgs/banner.png'></image>
+    </view>
+    <view class='tab-list'>
+      <view class='tab {{tab==1?"active":""}}' bindtap="editEvt" data-id="1">赛事列表</view>
+      <view class='tab {{tab==2?"active":""}}' bindtap="editEvt" data-id="2">自由约球</view>
+      <view class='tab {{tab==3?"active":""}}' bindtap="editEvt" data-id="3">篮球战术</view>
+    </view>
+    <view class='section-list' wx:if='{{tab==1}}'>
+      <view class="section" wx:for-index="idx" wx:for="{{infos}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+        <image src='/imgs/basket.png'></image>
+        <view class='match-info'>
+          <view class='match-tl'>{{item.title}}</view>
+          <view class='match-time'>比赛时间：{{item.time}}</view>kj
+        </view>
+      </view>
+      <view class="no-data" wx:if="{{!infos||infos.length==0}}">
+        <view class="empty-hint">暂无数据</view>
       </view>
     </view>
-    <view class="no-data" wx:if="{{!infos||infos.length==0}}">
-      <view class="empty-hint">暂无数据</view>
+    <view class='section-list about-section' wx:if='{{tab==2}}'>
+      <view class="about-item" wx:for-index="idx" wx:for="{{aboutList}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+        <view class='about-top'>
+          <image src='{{item.url}}'></image>
+          <view class='about-info'>
+            <view class='about-tl'>{{item.title}}</view>
+            <view class='about-time'>
+              <text>{{item.time}}</text>
+              <text class='about-hour'>{{item.hour}}</text>
+            </view>
+            <view class="about-desc">{{item.desc}}</view>
+          </view>
+        </view>
+        <view class='about-bottom'>
+          <view class='about-addr'>{{item.location}}</view>
+          <view class='about-distance'>{{item.distance}}</view>
+        </view>
+      </view>
     </view>
-  </view>
-  <view class='section-list' wx:if='{{tab==2}}'>
-      <view class="empty-hint">正在开发，敬请期待</view>
-  </view>
-  <view class='section-list tactics-section' wx:if='{{tab==3}}'>
+    <view class='section-list tactics-section' wx:if='{{tab==3}}'>
       <!-- <view class="empty-hint">正在开发，敬请期待</view> -->
-       <view class="tactics-item" wx:for-index="idx" wx:for="{{tacticsList}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
-      <image src='/imgs/basket.png'></image>
-      <view class='tactics-info'>
-        <view class='tactics-tl'>{{item.title}}</view>
-        <view class='tactics-desc'>{{item.desc}}</view>
+      <view class="tactics-item" wx:for-index="idx" wx:for="{{tacticsList}}" wx:for-item="item" wx:key="idx" id="{{idx}}" bindtap="bindItemTap">
+        <image src='{{item.picUrl}}'></image>
+        <view class='tactics-info'>
+          <view class='tactics-tl'>{{item.title}}</view>
+          <view class='tactics-desc'>{{item.description}}</view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class='jump' bindtap="bindViewTap">
-    <image src='/imgs/create.png'></image>
+    <image class='jump' bindtap="bindViewTap" src='/imgs/add.png'></image>
   </view>
 </view>
+
+<button open-type="getUserInfo" class="agree" bindgetuserinfo="agreeGetUser" lang="zh_CN">去设置</button>

@@ -1,29 +1,30 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+//index.js
+const network = require('../../utils/network.js')
 Page({
   data: {
     infos:[],
-    tab:1,
-    tacticsList:[
-      {
-        title:'美国国家队教学-投篮',
-        desc:'标准的投篮训练方法'
-      },
-      {
-        title: '三威胁——姿势',
-        desc: '标准的投篮训练方法'
-      },
-      {
-        title: '11种转身过人的方法',
-        desc: '转身大全'
-      },
-      {
-        title: '哈登教你进攻三威胁',
-        desc: '绝对实用'
-      }
-    ]
+    tab:2,
+    tacticsList:[],
+    aboutList:[{
+      title:'北京体育大学公开赛',
+      url:'/imgs/basket.png',
+      time:'2018/06/13',
+      hour:'18:00-19:00',
+      desc:'带上你的装备，和我一起鏖战天下',
+      location:'北京市海淀区清河中街',
+      distance:'4.2km'
+    }, {
+      title: '北京体育大学公开赛',
+      url: '/imgs/basket.png',
+      time: '2018/06/13',
+      hour: '18:00-19:00',
+      desc: '带上你的装备，和我一起鏖战天下',
+      location: '北京市海淀区清河中街',
+      distance: '4.2km'
+    }]
   },
   editEvt(event){
     // console.log(evt)
@@ -54,12 +55,27 @@ Page({
       url: '../detail/detail'
     })
   },
-  onLoad: function () {
-    // wx.setStorageSync('info', []);
-    let infos = wx.getStorageSync('info');
-    // console.log(infos);
-    this.setData({
-      infos: infos
+  //事件处理函数
+  getTactics(){
+    network.GET({
+      url: network.getTacticsList,
+      success: res => {
+        let resp = res.data;
+        console.log(resp)
+        if (res.statusCode == 200){
+           this.setData({
+             tacticsList: resp
+           })
+        }
+      },
+      fail: function (err) {
+        //失败后的逻辑
+        wx.showToast({ 'title': err || app.globalData.errMsg, 'icon': 'none' });
+      }
     })
+  },
+  onLoad: function () {
+
+    this.getTactics();
   }
 })

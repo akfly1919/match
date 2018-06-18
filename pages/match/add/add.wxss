@@ -96,3 +96,39 @@ input{
   background-color: white;
   box-shadow: 8rpx 8rpx 8rpx #cbcbcb;
 }
+
+.dis-img-items {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.img-item {
+  width: 130rpx;
+  height: 130rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.img-item image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.item-pmt {
+  font-size: 26rpx;
+  padding-top: 26rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.img-btn:after {
+  content: '+';
+  position: absolute;
+  font-size: 100rpx;
+  color: rgba(0, 0, 0, 0.15);
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}

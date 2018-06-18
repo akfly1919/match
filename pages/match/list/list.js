@@ -1,4 +1,9 @@
 // pages/match/list.js
+//index.js
+//获取应用实例
+const app = getApp()
+//index.js
+const network = require('../../../utils/network.js')
 Page({
 
   /**
@@ -10,61 +15,29 @@ Page({
       {title:'米BA', time: '2016-09-07' ,count:3},
     ]
   },
-
+  matchList() {
+    network.GET({
+      url: network.matchList,
+      success: res => {
+        let resp = res.data;
+        console.log(resp)
+        if (res.statusCode == 200) {
+          this.setData({
+            infos: resp
+          })
+        }
+      },
+      fail: function (err) {
+        //失败后的逻辑
+        wx.showToast({ 'title': err || app.globalData.errMsg, 'icon': 'none' });
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    this.matchList();
   },
   submitEvt(){
     wx.navigateTo({

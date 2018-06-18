@@ -1,10 +1,12 @@
-<!--logs.wxml-->
 <view class="container">
   <view class="dis-box">
-    <input value="{{title}}" bindinput="titleInput" placeholder="赛事名称："></input>
+    <input value="{{name}}" bindinput="nameInput" placeholder="赛事名称："></input>
   </view>
   <view class="dis-box">
     <input value="{{time}}" bindinput="timeInput" placeholder="开始时间："></input>
+  </view>
+  <view class="dis-box">
+    <input value="{{time}}" bindinput="endTimeInput" placeholder="结束时间"></input>
   </view>
   <view class="dis-box">
     <input value="{{contact}}" bindinput="contactInput" placeholder="联系方式："></input>
@@ -13,11 +15,14 @@
     <input value="{{num}}" bindinput="numInput" placeholder="球队数量："></input>
   </view>
   <view class="dis-box">
-    <input value="{{icon}}" bindinput="iconInput" placeholder="赛事图标："></input>
-  </view>
-  <view class="dis-box">
     <textarea value="{{desc}}" bindinput="descInput" placeholder="赛事描述：" />
   </view>
-  
+  <view class="dis-img-items">
+    <view class="img-item" wx:for="{{imgList}}" wx:for-item="trade" wx:key="{{index}}" id="{{index}}" bindtap="delImg">
+      <image src="{{imgList[index]}}"></image>
+    </view>
+    <view class="img-item img-btn" catchtap="chooseImageTap" wx:if="{{imgList.length<5}}"></view>
+  </view>
+  <view class="item-pmt" wx:if="{{imgList.length>0}}">点击照片删除,最多可上传5张</view>
   <view class="push-btn" bindtap="submitEvt">确认添加</view>
 </view>
