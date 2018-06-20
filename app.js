@@ -1,7 +1,11 @@
 //app.js
 var network = require('./utils/network.js')
+import nbaTeamRank from './utils/nbaTeamRank.js';
+import nbaPlayerRank from './utils/nbaPlayerRank.js';
 App({
   onLaunch: function () {
+    Object.assign(this.globalData, nbaTeamRank);
+    Object.assign(this.globalData, nbaPlayerRank);
     // 登录
     wx.login({
       success: (res) => {
@@ -89,7 +93,9 @@ App({
 
         }
       })
+
   },
+
   globalData: {
     userInfo: null
   }

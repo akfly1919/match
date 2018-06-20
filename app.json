@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/match/matchDetail/matchDetail",
+    "pages/calendar/calendar",
+    "pages/team/member/member",
     "pages/team/list/list",
     "pages/index/index",
     "pages/mine/mine",
